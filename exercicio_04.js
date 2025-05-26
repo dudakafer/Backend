@@ -1,55 +1,135 @@
-//01
-let apartamento = {
-    quartos: 2,
-    tipo: 'apartamento',
-    endereco: 'Avenida Principal, 456 - Centro',
-    andar: 7
+import readLine from "readline-sync";
+
+//ATIVIDADE 1
+
+let dia = readLine.question("Informações do dia da semana: ")
+switch (dia) {
+    case '1':
+        console.log('Domingo');
+        break;
+    case '2':
+        console.log('Segunda');
+        break;
+    case '3':
+        console.log('Terça');
+        break;
+    case '4':
+        console.log('Quarta');
+        break;
+    case '5':
+        console.log('Quinta');
+        break;
+    case '6':
+        console.log('Sexta');
+        break;
+    case '7':
+        console.log('Sabado');
+        break;
+
+    default:
+        console.log('Valor Invalido \n Informe o valor no intervalo de 1 a 7');
+        break;
 }
 
-console.log(
-    `Apartamento com ${apartamento.quartos} quartos, localizado no ${apartamento.andar}º andar da ${apartamento.endereco}.`
-);
+//ATIVIDADE 2
+import entradaDados from 'readline-sync';
 
-//02
-let produtoEmbalado = {
-    nome: 'Laptop HP',
-    categoria: 'Eletronicos',
-    peso: 1.5,
-    preco: 3500
+let mes = readLine.question("Informações do dia da semana")
+switch (mes) {
+    case '1':
+        console.log('Janeiro')
+        break;
+    case '2':
+        console.log('Fevereiro')
+        break;
+    case '3':
+        console.log('Março')
+        break;
+    case '4':
+        console.log('Abril')
+        break;
+    case '5':
+        console.log('Maio')
+        break;
+    case '6':
+        console.log('Junho')
+        break;
+    case '7':
+        console.log('Julho')
+        break;
+    case '8':
+        console.log('Agosto')
+        break;
+    case '9':
+        console.log('Setembro')
+        break;
+    case '10':
+        console.log(' Outubro')
+        break;
+    case '11':
+        console.log('Novembro')
+        break;
+    case '12':
+        console.log('Dezembro')
+        break;
+    default:
+        console.log('Valor Invalido \n Informe o valor certo');
+        break;
+
 }
 
-console.log(`O produto ${produtoEmbalado.nome}, pesando ${produtoEmbalado.peso} kg,esta a venda por ${produtoEmbalado.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`);
+//ATIVIDADE 3
+import entradaDados from 'readline-sync';
 
-//03
+let x = readLine.question("Informe o primero numero: ")
+let y = readLine.question("Informe o segundo numero: ")
+let op = readLine.question("Escolha a opção: /n{1}Soma /n{2}Subtração /n{3}Multiplicação /n{4}Divisão")
 
-class Imovel {
-    constructor(quartos, tipo, endereco) {
-        this.quartos = quartos;
-        this.tipo = tipo;
-        this.endereco = endereco
-    }
+switch (op) {
+    case '1':
+        console.log('${x} + ${y} = ${x + y}')
+        break;
+    case '2':
+        console.log('${x} - ${y} = ${x - y}')
+        break;
+    case '3':
+        console.log('${x} * ${y} = ${x * y}')
+        break;
+    case '4':
+        console.log('${x} / ${y} = ${x / y}')
+        break;
+    default:
+        console.log('Valor Inválido /nDigite um numero entre 1 a 4 ');
+        break;
 }
 
-let casa = new Imovel();
-casa.quartos = 2;
-casa.tipo = 'sobrado';
-casa.endereco = 'centro';
+//ATIVIDADE 4
 
-let ap = new Imovel(2, 'Apartamento', 'Rua da depressao,bairro da solidao, num:666');
+import entradaDados from 'readline-sync';
 
-console.log(`Quartos: ${casa.quartos} \nTipo: ${casa.tipo} \nEndereço ${casa.endereco}`);
-console.log(`Quartos: ${ap.quartos}\nTipo: ${ap.tipo}\nEndereço ${ap.endereco}`);
+let salario = entradaDados.questionFloat('Digite o seu salario: ')
+let cat = entradaDados.question('Selecione uma categoria\n[A] 5%\n[B] 10%\n[C] 15%\n[D]20% ').toUpperCase();
+let bonus = 0
 
-//04
-
-class Veiculo {
-    constructor(marca, modelo, ano) {
-        this.marca = marca
-        this.modelo = modelo
-        this.ano = ano
-
-    }
-    exibirInformaçoeas(){
-        return ``
-    }
+switch (cat) {
+    case 'A':
+        bonus = salario * 0.05;
+        console.log(`${(salario + bonus).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`)
+        break;
+    case 'B':
+        bonus = salario * 0.10;
+        console.log(`${(salario + bonus).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`)
+        break;
+    case 'C':
+        bonus = salario * 0.15;
+        console.log(`${(salario + bonus).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`)
+        break;
+    case 'D':
+        bonus = salario * 0.20;
+        console.log(`${(salario + bonus).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`)
+        break;
+    default:
+        console.log('Valor invalido\nInforme o valor correto')
+        break;
 }
+
